@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-//S = n(n+1)/2 – x + y
+//S = 
 
 public class MissAndRepeat {
 
 	
-public static int repeat(int[] numArray) {
+public static List<Integer> repeat(int[] numArray) {
 		int size = numArray.length;
 		List<Integer> resList = new ArrayList<>();
 		Arrays.sort(numArray);
@@ -22,8 +22,22 @@ public static int repeat(int[] numArray) {
 				resList.add(i);
 			}
 		}
-		return Collections.min(resList);
+		return resList;
 	}
+//n(n+1)/2 – x + y
+public static int missing(int[] numArr) {
+	int size= numArr.length+1;
+	int total = size*(size+1)/2;
+	
+	int sum = Arrays.stream(numArr).sum();
+	
+	return total-sum;
+	
+}
+
+public static int least(List<Integer> arrList) {
+	return Collections.min(arrList);
+}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
